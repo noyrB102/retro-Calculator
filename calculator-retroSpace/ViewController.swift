@@ -19,7 +19,8 @@ class ViewController: UIViewController {
         case Empty = "Empty"
         
     }
-    
+
+   
     @IBOutlet weak var outputLbl: UILabel!
     
     var btnSound: AVAudioPlayer!
@@ -28,9 +29,7 @@ class ViewController: UIViewController {
     var leftValStr = ""
     var rightValStr = ""
     var currentOperation: Operation = Operation.Empty
-    var result = ""
-    
-    
+    var result = ""    
     
 
     override func viewDidLoad() {
@@ -50,8 +49,11 @@ class ViewController: UIViewController {
         
     }
 
+//This IBAction uses the "tag" property of Button to help us identify which button was push (0 - 9) on the numeric key pad
     @IBAction func numberPressed(btn: UIButton!) {
         playSound()
+        
+//Adds the number to the screen - assigns the btn pressed to the runningNumber and then stores it in the output label
         runningNumber += "\(btn.tag)"
         outputLbl.text = runningNumber
     }
